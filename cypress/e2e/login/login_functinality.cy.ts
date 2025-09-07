@@ -1,4 +1,3 @@
-// cypress/e2e/login.cy.js
 
 describe('Login Test Cases', () => {
 

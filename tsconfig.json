@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es6",                // Modern JS, compatible with Cypress
-    "module": "commonjs",           // Standard for Node.js projects
-    "types": ["cypress"],           // ✅ Add Cypress types
-    "strict": true,                 // Keep strict type checking
-    "esModuleInterop": true,        // Allow import/export compatibility
-    "skipLibCheck": true            // Skip library checks for faster builds
+    "target": "es6",               
+    "module": "commonjs",           
+    "types": ["cypress"],           
+    "strict": true,                 
+    "esModuleInterop": true,        
+    "skipLibCheck": true            
   },
   "include": [
-    "cypress/**/*.ts"               // Tell TS to check Cypress test files
+    "cypress/**/*.ts"               
   ]
 }
