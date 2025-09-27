@@ -1,0 +1,14 @@
+name: Trigger e2e cypress - Jenkins Job
+
+on:
+  push:
+
+
+jobs:
+  trigger-jenkins:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Jenkins Job
+        run: |
+          curl -X POST https://superably-nubilous-carissa.ngrok-free.dev/job/orangeHRM-e2e/build \
+            --user shhamdeh:${{ secrets.JENKINS_API_TOKEN }}
