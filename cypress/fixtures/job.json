@@ -1,0 +1,16 @@
+{
+  "jobDetails": {
+    "jobTitle": "Backend Developer",
+    "description": "Responsible for designing, implementing, and maintaining scalable backend services using Java and Spring Boot.",
+    "note": "Experience with cloud services (AWS/Azure) is a plus."
+  },
+  "vacancies": {
+    "name": "Software Engineer - Backend",
+    "description": "We are seeking a backend developer to join our growing engineering team. The candidate should have strong knowledge of APIs, databases, and system design."
+  },
+  "interview": {
+    "title": "Technical Interview - Backend Developer Position",
+    "date": "2025-10-10",
+    "time": "14:30"
+  }
+}

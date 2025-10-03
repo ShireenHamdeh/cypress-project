@@ -1,0 +1,9 @@
+{
+  "firstname": "John",
+  "middlename": "A",
+  "lastname": "Smith",
+  "fullname": "John Smith",
+  "employeerId": 12345,
+  "password": "John123",
+  "shortPassword": "123"
+}
