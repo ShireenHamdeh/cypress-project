@@ -1,0 +1,8 @@
+{
+    "invalidCreds":"Invalid credentials",
+    "required": "Required",
+    "successfullyMsg": "Successfully Saved",
+    "successfullyUpdatedMsg": "Successfully Updated",
+    "invalidPicMsg": "File type not allowed",
+    "shortPasswordMsg": "Should have at least 7 characters"
+}

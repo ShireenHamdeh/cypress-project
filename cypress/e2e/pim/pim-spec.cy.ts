@@ -1,5 +1,10 @@
+import { StatusCode } from "../../support/enums/https-enum";
 import { APP_MODULE } from "../../support/enums/modules-enums";
-import { pimPage } from "../../support/pages/pim-page";
+import { CommonHelper } from "../../support/helpers/common-helper";
+import { EmployeeHelper } from "../../support/helpers/employee-helper";
+import { pimPage } from "../../support/pages/pim/pim-page";
+
+let createdEmpNumber: number;
 
 describe("PIM Test Cases", () => {
   beforeEach(() => {
@@ -23,8 +28,7 @@ describe("PIM Test Cases", () => {
       pimPage.typeEmployeeId(employeers.employeerId);
     });
   });
-
-  it.skip("TC22: Add Employee with Photo & Login Details", () => {
+  it("TC22: Add Employee with Photo & Login Details", () => {
     pimPage.openAddEmployee();
 
     cy.get("@employeers").then((employeers: any) => {
@@ -38,26 +42,40 @@ describe("PIM Test Cases", () => {
       pimPage.typeUserName(employeers.fullname);
       pimPage.typePassword(employeers.password);
       pimPage.save();
+
       pimPage.validateMsg();
       pimPage.validateEmployeeImage();
       pimPage.openEmployeeList();
+
+      EmployeeHelper.getEmployee().then((response) => {
+        CommonHelper.logResponseStatus(response);
+        CommonHelper.logResponseBody(response);
+        expect(response.status).to.eq(StatusCode.OK);
+
+        createdEmpNumber = Number(response.body.data[0].empNumber);
+
+        EmployeeHelper.deleteEmployee(createdEmpNumber).then((deleteResp) => {
+          CommonHelper.logResponseStatus(deleteResp);
+          CommonHelper.logResponseBody(deleteResp);
+          expect(deleteResp.status).to.eq(StatusCode.OK);
+        });
+      });
     });
   });
 
-  it.only("TC23: Add Employee Validation Errors", () => {
+  it("TC23: Add Employee Validation Errors", () => {
     pimPage.openAddEmployee();
     cy.get("@employeers").then((employeers: any) => {
       pimPage.typeLastName(employeers.lastname);
       pimPage.typeEmployeeId(employeers.employeerId);
       pimPage.save();
-      pimPage.checkRequiredMsg()
+      pimPage.checkRequiredMsg();
 
-      pimPage.uplaodInvalidPic()
+      pimPage.uplaodInvalidPic();
 
       pimPage.clickCreateLoginDetailsBtn();
-      pimPage.typeShortPassword()
-      pimPage.save()
-      
+      pimPage.typeShortPassword();
+      pimPage.save();
     });
   });
 });

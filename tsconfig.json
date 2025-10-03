@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",               
+    "module": "commonjs",           
+    "types": ["cypress", "cypress-file-upload"],           
+    "strict": true,                 
+    "esModuleInterop": true,        
+    "skipLibCheck": true            
+  },
+  "include": [
+    "cypress/**/*.ts"               
+  ]
+}

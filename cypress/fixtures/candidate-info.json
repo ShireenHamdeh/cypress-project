@@ -1,0 +1,12 @@
+{
+    "valid": {
+        "firstName": "Alice",
+        "middleName": "M",
+        "lastName": "Johnson",
+        "fullName":"Alice M Johnson",
+        "email": "alice.johnson@gmail.com",
+        "contactNumber": "+1-202-555-0198",
+        "keywords": "software engineer, backend, java, spring boot",
+        "note": "Looking for opportunities in backend development."
+    }
+}
